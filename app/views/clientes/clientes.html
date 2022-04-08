@@ -1,0 +1,33 @@
+<h2>Clientes</h2>
+
+
+<a href="#!/clientesAdd" class="btn btn-primary">Adicionar cliente</a>
+
+
+<table class="table mt-2" ng-controller = "ClientesController as self">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Contato</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="cliente in clientesController.clientes">
+            <td></td>
+            <td>{{cliente.nome}}</td>
+            <td>{{cliente.telefone}}</td>
+            <td>
+                <button type="button" class="btn btn-danger" ng-click="self.removeCliente(cliente)">Remover</button>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">Quantidade de Clientes:
+                {{clientesController.clientes.length}}
+            </td>
+        </tr>
+    </tfoot>
+</table>
